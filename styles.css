@@ -58,13 +58,13 @@ html, body {
 #third{
     position: fixed;
     top: 0px;
-    transition: transform .5s;
+    transition: transform .25s;
     left: -500px;
 }
 #fourth{
     position: fixed;
     top: 0px;
-    transition: transform .5s;
+    transition: transform .25s;
     left: -500px;
 }
 
