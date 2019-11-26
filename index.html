@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link id='styles' rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div>
+        <div id='red' style="z-index: 100;"></div>
+        <div id='blue' style="z-index: 102;"></div>
+        <div id='green' style="z-index: 104;"></div>
+        <div id='yellow' style="z-index: 106;"></div>
+        <div id='bottom' style="z-index: 108;"></div>
+    </div>
+    <h3 id='first' style="z-index: 101;">first</h3>
+    <h3 id='second' >second</h3>
+    <h3 id='third'>third</h3>
+    <h3 id='fourth'>fourth</h3>
+    
+    <script>
+        window.addEventListener('scroll', () => {
+            // handles first
+            console.log(window.scrollY)
+            if(window.scrollY > 200 ){
+                document.getElementById('first').style.zIndex='99';
+                document.getElementById('first').style.transform='translateX(-500px)';
+
+            }
+            if(window.scrollY < 200 ){
+                document.getElementById('first').style.zIndex='101';
+                document.getElementById('first').style.transform='translateX(500px)';
+
+            }
+            // handles second
+            if(window.scrollY >= 185 ){
+                document.getElementById('second').style.zIndex='103';
+                document.getElementById('second').style.transform='translateX(500px)';
+            }
+            if(window.scrollY < 185 ){
+                document.getElementById('second').style.zIndex='99';
+                document.getElementById('second').style.transform='translateX(-500px)';
+
+            }
+            // handles third
+            if(window.scrollY >= 385 ){
+                document.getElementById('third').style.zIndex='105';
+                document.getElementById('third').style.transform='translateX(500px)';
+                document.getElementById('second').style.transform='translateX(-500px)';
+
+
+            }
+            if(window.scrollY < 385 ){
+                document.getElementById('third').style.zIndex='99';
+                document.getElementById('third').style.transform='translateX(-500px)';
+
+            }
+            // handles fourth
+            if(window.scrollY >= 585 ){
+                document.getElementById('fourth').style.zIndex='107';
+                document.getElementById('fourth').style.transform='translateX(500px)';
+                document.getElementById('third').style.transform='translateX(-500px)';
+
+            }
+            if(window.scrollY < 585 ){
+                document.getElementById('fourth').style.zIndex='99';
+                document.getElementById('fourth').style.transform='translateX(-500px)';
+            }
+            if(window.scrollY >= 785 ){
+                document.getElementById('fourth').style.transform='translateX(-500px)';
+
+            }
+
+
+        })
+    
+    </script>
+</body>
+</html>
